@@ -8,7 +8,7 @@ pipeline {
         TOMCAT_URL = 'http://18.206.135.232:8080/manager/text'
         TOMCAT_USER = 'admin' 
         TOMCAT_PASS = 'admin_password' 
-        WAR_FILE = '**/target/*.war' // Path to the .war file
+        WAR_FILE = '/var/lib/jenkins/workspace/tomcat-job/webapp/target/webapp.war' // Path to the .war file
         APP_NAME = 'webapp' // The name of the application on Tomcat
     }
 
@@ -31,9 +31,8 @@ pipeline {
             steps {
                 // Deploy the .war file to Tomcat
                 script {
-                    def war = findFiles(glob: "${WAR_FILE}")[0].path
                     sh """
-                    curl --upload-file ${war} \
+                    curl --upload-file ${WAR_FILE} \
                     --user ${TOMCAT_USER}:${TOMCAT_PASS} \
                     ${TOMCAT_URL}/deploy?path=/${APP_NAME}&update=true
                     """
