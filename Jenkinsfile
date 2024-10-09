@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Clone the GitHub repository
-                git branch: "${BRANCH}", url: "${GIT_REPO}"
+                git branch: "${BRANCH}", url: "${GIT_REPO}", credentialsId: 'github-token'
             }
         }
 
