@@ -7,7 +7,7 @@ pipeline {
         MAVEN_HOME = '/usr/share/maven' 
         TOMCAT_URL = 'http://18.206.135.232:8080/manager/text'
         TOMCAT_USER = 'admin' 
-        TOMCAT_PASS = 'password' 
+        TOMCAT_PASS = 'admin_password' 
         WAR_FILE = '**/target/*.war' // Path to the .war file
         APP_NAME = 'webapp' // The name of the application on Tomcat
     }
