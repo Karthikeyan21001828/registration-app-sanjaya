@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_REPO = 'https://github.com/yourusername/your-java-webapp-repo.git'
+        GIT_REPO = 'https://github.com/Karthikeyan21001828/registration-app-sanjaya.git'
         BRANCH = 'main'
         MAVEN_HOME = '/usr/share/maven' 
         TOMCAT_URL = 'http://18.206.135.232:8080/manager/text'
